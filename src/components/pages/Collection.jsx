@@ -67,11 +67,11 @@ const Collection = () => {
       {/* Left Sidebar */}
       <div className='min-w-60 '>
         <p
-          className='my-2 text-xl flex items-center cursor-pointer gap-1'
+          className='my-2 text-xl flex cursor-pointer'
           onClick={() => setShowFilter(!showFilter)}
         >
           FILTERS
-          <span className='h-3 sm:hidden'>
+          <span className='h-3 sm:hidden text-2xl'>
             {showFilter ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
           </span>
         </p>
@@ -141,7 +141,7 @@ const Collection = () => {
           </select>
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 p-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-4'>
           {filteredProducts.map((item, key) => (
             <Card
               key={key}

@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <>
-      <section className='flex  items-center flex-wrap border-1 border-black gap-10 text-[#414141] text-center lg:justify-between justify-center flax[1] '>
+      <section className='flex  items-center flex-wrap border-1 border-gray-300 gap-10 text-[#414141] text-center lg:justify-between justify-center flax[1] '>
         <div className='md:pl-15 pt-2 flex flex-col gap-2 flex-nowrap justify-center'>
           <p className='text-xl xl:text-2xl flex items-center'>
             <span className='w-12 h-[1px] bg-black '></span> OUR BESTSELLERS

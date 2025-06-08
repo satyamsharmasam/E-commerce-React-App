@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <div className='flex-col xl:flex-row flex xl:items-center  justify-between  text-gray-700  border-b-gray-200 border-b-2 pt-10 gap-10 text-sm pb-4'>
         <div className='xl:w-sm w-auto text-justify flex flex-col flex-wrap items-start gap-4'>
-          <img className='w-20' src={logo} alt='' />
+          <img className='w-30' src={logo} alt='' />
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -15,23 +15,6 @@ const Footer = () => {
           </p>
         </div>
         <div className='flex-col xl:flex-row flex items-start justify-around xl:w-10/18 gap-10 '>
-          {/* <div className='flex flex-col gap-2 '>
-            <h1 className='text-2xl font-semibold text-black '>
-              SHOP BY CATEGORY
-            </h1>
-            <p to='/collection' className='cursor-pointer  '>
-              Men
-            </p>
-            <p to='/about' className='cursor-pointer  '>
-              Women
-            </p>
-            <p to='/contact' className='cursor-pointer  '>
-              Ethnic Wear
-            </p>
-            <p to='/contact' className='cursor-pointer  '>
-              Winter Collection
-            </p>
-          </div> */}
           <div className='flex flex-col gap-2 '>
             <h1 className='text-2xl font-semibold text-black '>Pages</h1>
             <NavLink
