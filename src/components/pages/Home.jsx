@@ -16,8 +16,8 @@ const Home = () => {
 
   return (
     <>
-      <section className='flex  items-center flex-wrap border-1 border-gray-300 gap-10 text-[#414141] text-center lg:justify-between justify-center flax[1] '>
-        <div className='md:pl-15 pt-2 flex flex-col gap-2 flex-nowrap justify-center'>
+      <section className='flex  items-center flex-wrap border-1 border-gray-300 gap-10 text-[#414141] text-center lg:justify-between justify-center flax[1] border-t-0'>
+        <div className='md:pl-15 pt-10 xl:pt-0 flex flex-col gap-2 flex-nowrap justify-center '>
           <p className='text-xl xl:text-2xl flex items-center'>
             <span className='w-12 h-[1px] bg-black '></span> OUR BESTSELLERS
           </p>
@@ -37,8 +37,8 @@ const Home = () => {
           <span className='text-gray-500'>LATEST</span> COLLECTIONS____
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-          placeat?
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias,
+          esse.
         </p>
         <div className=' flex gap-1 text-start mt-10 flex-wrap xl:flex-nowrap justify-center'>
           {products.map((item, key) => (
@@ -55,10 +55,7 @@ const Home = () => {
         <h2 className=' text-xl xl:text-3xl font-semibold'>
           <span className='text-gray-500'>BEST </span>SELLERS____
         </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-          placeat?
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime.</p>
         <div className=' flex gap-1 text-start mt-10 flex-wrap xl:flex-nowrap h-fit justify-center'>
           {bestSellers.map((item, key) => (
             <Card

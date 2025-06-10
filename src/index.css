@@ -2,7 +2,7 @@
 @import 'tailwindcss';
 @plugin 'flowbite-react/plugin/tailwindcss';
 @source '../.flowbite-react/class-list.json';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -131,6 +131,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-outfit;
   }
 }
