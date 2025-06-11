@@ -3,8 +3,9 @@ import Carousel from '../Carousel';
 const About = () => {
   return (
     <div className='pt-10 '>
-      <h2 className='text-2xl  md:text-3xl font-semibold text-center pb-10 xl:pb-15'>
-        <span className='text-gray-500'>ABOUT</span> US____
+      <h2 className='text-2xl  md:text-3xl font-semibold pb-10 xl:pb-15 flex items-center gap-1 justify-center'>
+        <span className='text-gray-500'>ABOUT</span> US
+        <span className='w-8 h-[1px] bg-black '></span>
       </h2>
       <div className='flex items-center gap-15 xl:pr-20 xl:flex-nowrap flex-wrap justify-center'>
         <img className='w-115' src={AboutImage} alt='' />

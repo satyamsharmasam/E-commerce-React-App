@@ -33,8 +33,9 @@ const Home = () => {
         />
       </section>
       <section className='mt-10 pb-4 flex flex-col items-center gap-3 text-center'>
-        <h2 className=' text-xl xl:text-3xl font-semibold'>
-          <span className='text-gray-500'>LATEST</span> COLLECTIONS____
+        <h2 className=' text-xl xl:text-3xl font-semibold flex items-center gap-1'>
+          <span className='text-gray-500'>LATEST</span> COLLECTIONS
+          <span className='w-8 h-[1px] bg-black '></span>
         </h2>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias,
@@ -52,8 +53,9 @@ const Home = () => {
         </div>
       </section>
       <section className='mt-10 pb-4 flex flex-col items-center gap-3 text-center'>
-        <h2 className=' text-xl xl:text-3xl font-semibold'>
-          <span className='text-gray-500'>BEST </span>SELLERS____
+        <h2 className=' text-xl xl:text-3xl font-semibold flex items-center gap-1'>
+          <span className='w-8 h-[1px] bg-black '></span>
+          <span className='text-gray-500'>BEST </span>SELLERS
         </h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime.</p>
         <div className=' flex gap-1 text-start mt-10 flex-wrap xl:flex-nowrap h-fit justify-center'>

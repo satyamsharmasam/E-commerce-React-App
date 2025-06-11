@@ -44,13 +44,13 @@ const Footer = () => {
           <div className='flex flex-col gap-2 '>
             <h1 className='text-2xl font-semibold text-black'>GET IN TOUCH</h1>
             <p>+1-000-000-0000</p>
-            <p>info@velvexclothing.com</p>
+            <p>clothing@velvex.com</p>
             <a href='https://www.instagram.com/satyamsharmasam/'> Instagram</a>
           </div>
         </div>
       </div>
       <div className='text-center p-4 text-sm'>
-        Copyright 2025@ velvexclothing - All Right Reserved.
+        © 2025 Velvex – All Rights Reserved.
       </div>
     </>
   );

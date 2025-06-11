@@ -78,7 +78,7 @@ const Collection = () => {
 
         {/* Category Filter */}
         <div
-          className={`border border-gray-300 pl-5 py-3 mt-6 sm:block ${
+          className={`border border-gray-300 pl-5 py-3 mt-6 rounded-sm sm:block ${
             showFilter
               ? 'motion-preset-slide-down-lg motion-ease-spring-bouncier'
               : 'hidden'
@@ -102,7 +102,7 @@ const Collection = () => {
 
         {/* Sub-category Filter */}
         <div
-          className={`border border-gray-300 pl-5 py-3 my-6 sm:block ${
+          className={`border border-gray-300 pl-5 py-3 my-6 rounded-sm  sm:block ${
             showFilter
               ? 'motion-preset-slide-down-lg motion-ease-spring-bouncier'
               : 'hidden'
@@ -133,7 +133,7 @@ const Collection = () => {
           </p>
           <select
             onChange={(e) => setSortType(e.target.value)}
-            className='border border-gray-300 rounded-md px-2 py-2 text-sm text-gray-700 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-400 transition duration-200'
+            className='border border-gray-300 rounded-sm px-2 py-2 text-sm text-gray-700 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-400 transition duration-200'
           >
             <option value='relevant'>Sort by: Relevant</option>
             <option value='low-high'>Sort by: Low to High</option>
@@ -141,7 +141,7 @@ const Collection = () => {
           </select>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 py-4'>
           {filteredProducts.map((item, key) => (
             <Card
               key={key}
