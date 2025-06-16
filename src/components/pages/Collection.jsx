@@ -148,6 +148,7 @@ const Collection = () => {
               url={item.image}
               productName={item.name}
               price={item.price}
+              product={item}
             />
           ))}
         </div>

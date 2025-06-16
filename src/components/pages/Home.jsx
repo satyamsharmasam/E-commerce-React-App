@@ -8,11 +8,13 @@ const Home = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   // slice 5 product for latest collection
-  const products = data?.products?.slice(3, 8).reverse() || [];
 
+  const products = data?.products?.slice(3, 8).reverse() || [];
   // Filter best sellers product
   const bestSellers =
     data?.products?.filter((item) => item.bestseller).reverse() || [];
+
+  console.log(products);
 
   return (
     <>
@@ -48,6 +50,7 @@ const Home = () => {
               url={item.image}
               productName={item.name}
               price={item.price}
+              product={item}
             />
           ))}
         </div>
@@ -65,6 +68,7 @@ const Home = () => {
               url={item.image}
               productName={item.name}
               price={item.price}
+              product={item}
             />
           ))}
         </div>
