@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useGetProductQuery } from '../../../redux/apiSlice';
+import { useState } from 'react';
 
 const ProductDetail = () => {
   const { id } = useParams(); // id from URL
@@ -11,6 +12,10 @@ const ProductDetail = () => {
   const product = data?.products?.find((item) => item._id === id);
 
   if (!product) return <p>Product not found</p>;
+
+  function handleClick() {
+    alert('product is selected');
+  }
 
   return (
     <div className='flex my-10 gap-10 font-outfit xl:flex-nowrap flex-wrap items-center  '>
@@ -53,7 +58,10 @@ const ProductDetail = () => {
               </button>
             ))}
           </div>
-          <button className='px-7 py-3 bg-black text-white w-fit cursor-pointer'>
+          <button
+            className='px-7 py-3 bg-black text-white w-fit cursor-pointer'
+            onClick={handleClick}
+          >
             ADD TO CART
           </button>
         </div>
