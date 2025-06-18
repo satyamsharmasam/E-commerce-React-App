@@ -44,8 +44,11 @@ const ProductDetail = () => {
           <p className='text-[#797F88] text-[16px]'>{product.description}</p>
           <p>Select Size</p>
           <div className='flex items-center gap-2'>
-            {product.sizes.map((item, i) => (
-              <button className='border-2 border-[#E5E7EB] py-2 px-4 bg-[#F3F4F6] font-semibold cursor-pointer focus:text-[#F3F4F6] focus:bg-black'>
+            {product.sizes.map((item, key) => (
+              <button
+                className='border-2 border-[#E5E7EB] py-2 px-4 bg-[#F3F4F6] font-semibold cursor-pointer focus:text-[#F3F4F6] focus:bg-black'
+                key={key}
+              >
                 {item}
               </button>
             ))}

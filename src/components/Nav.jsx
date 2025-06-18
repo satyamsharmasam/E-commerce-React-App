@@ -50,7 +50,7 @@ const Nav = () => {
         <div className='hidden sm:flex gap-5 text-[15px] text-gray-700 items-center justify-end font-outfit uppercase mr-5'>
           <NavLinks onClick={toggleNavbar} />
         </div>
-        <div className='sm:hidden text-2xl w-3'>
+        <div className='sm:hidden text-[28px] w-[26px]'>
           <button onClick={toggleNavbar}>
             {isOpen ? <RxCross1 /> : <RiMenu3Line />}
           </button>
@@ -60,7 +60,7 @@ const Nav = () => {
       {isOpen && (
         <div
           className='sm:hidden flex-col items-center basis-full
-         bg-black text-white h-40 py-4 text-sm uppercase flex justify-between motion-preset-slide-left-lg motion-ease-spring-bouncier z-50 absolute top-20 left-0 w-full'
+         bg-black text-white h-52  py-6 text-sm uppercase flex justify-between motion-preset-slide-left-lg motion-ease-spring-bouncier z-50 absolute top-18 left-0 w-full'
         >
           <NavLinks onClick={toggleNavbar} />
         </div>
