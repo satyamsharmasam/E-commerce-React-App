@@ -1,7 +1,7 @@
 import contact from '../../assets/contact.jpg';
 const Contact = () => {
   return (
-    <div className='pt-10 '>
+    <div className='pt-10'>
       <h2 className='text-2xl  md:text-3xl font-semibold text-center pb-10 xl:pb-15 flex items-center gap-1 justify-center'>
         <span className='text-gray-500'>CONTACT</span> US
         <span className='w-8 h-[1px] bg-black '></span>

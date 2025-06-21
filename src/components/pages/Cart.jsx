@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
   return (
-    <div className='border-t pt-14'>
+    <div className=' pt-14'>
       <div className=' text-2xl mb-3'>
         <div className='inline-flex gap-2 items-center mb-3'>
           <p className='text-gray-500'>

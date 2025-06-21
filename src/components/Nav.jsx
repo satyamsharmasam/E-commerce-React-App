@@ -60,7 +60,7 @@ const Nav = () => {
       {isOpen && (
         <div
           className='sm:hidden flex-col items-center basis-full
-         bg-black text-white h-52  py-6 text-sm uppercase flex justify-between motion-preset-slide-left-lg motion-ease-spring-bouncier z-50 absolute top-18 left-0 w-full'
+         bg-black text-white h-52  py-6 text-sm uppercase flex justify-between motion-preset-slide-left-lg motion-ease-spring-bouncier z-50 absolute top-18 left-0 w-full '
         >
           <NavLinks onClick={toggleNavbar} />
         </div>

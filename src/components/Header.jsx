@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import CartLogo from './CartLogo';
 import Nav from './Nav';
+import ScrollProgress from './magicui/scroll-progress';
 
 const Header = () => {
   return (
@@ -13,6 +14,7 @@ const Header = () => {
         <Nav />
         <CartLogo />
       </div>
+      <ScrollProgress className='top-[82px] sm:top-[63px] z-0 h-[2px]' />
     </header>
   );
 };
