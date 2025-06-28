@@ -1,4 +1,4 @@
-import { useGetProductQuery } from '../../../redux/apiSlice';
+import { useGetProductQuery } from '../../../redux/slice/apiSlice';
 import Card from '../Card';
 
 const Home = () => {

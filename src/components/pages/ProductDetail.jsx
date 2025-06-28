@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useGetProductQuery } from '../../../redux/apiSlice';
+import { useGetProductQuery } from '../../../redux/slice/apiSlice';
 import { useState } from 'react';
 
 const ProductDetail = () => {

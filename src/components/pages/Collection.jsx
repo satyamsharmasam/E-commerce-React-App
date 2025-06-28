@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useGetProductQuery } from '../../../redux/apiSlice';
+import { useGetProductQuery } from '../../../redux/slice/apiSlice';
 import Card from '../Card';
 import { IoMdArrowDropright, IoMdArrowDropdown } from 'react-icons/io';
 
