@@ -1,8 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { useGetProductQuery } from '../../../redux/slice/apiSlice';
+import { addToCart } from '../../../redux/slice/cartSlice';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 const ProductDetail = () => {
+  const dispatch = useDispatch();
+  const [selectedSize, setSelectedSize] = useState(null);
   const { id } = useParams(); // id from URL
   const { data, isLoading } = useGetProductQuery();
 
@@ -13,8 +17,25 @@ const ProductDetail = () => {
 
   if (!product) return <p>Product not found</p>;
 
-  function handleClick() {
+  function handleAddToCart() {
+    if (!selectedSize) {
+      alert('select the size first');
+      return;
+    }
+
+    dispatch(
+      addToCart({
+        id: product._id,
+        price: product.price,
+        image: product.image,
+        title: product.title,
+        size: selectedSize,
+      })
+    );
+
     alert('product is selected');
+
+    selectedSize(null);
   }
 
   return (
@@ -49,18 +70,19 @@ const ProductDetail = () => {
           <p className='text-[#797F88] text-[16px]'>{product.description}</p>
           <p>Select Size</p>
           <div className='flex items-center gap-2'>
-            {product.sizes.map((item, key) => (
+            {product.sizes.map((size, key) => (
               <button
                 className='border-2 border-[#E5E7EB] py-2 px-4 bg-[#F3F4F6] font-semibold cursor-pointer focus:text-[#F3F4F6] focus:bg-black'
                 key={key}
+                onClick={() => setSelectedSize(size)}
               >
-                {item}
+                {size}
               </button>
             ))}
           </div>
           <button
             className='px-7 py-3 bg-black text-white w-fit cursor-pointer'
-            onClick={handleClick}
+            onClick={handleAddToCart}
           >
             ADD TO CART
           </button>

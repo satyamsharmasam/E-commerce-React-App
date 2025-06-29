@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 // input class and inputs aob
 const inputClass = 'border border-gray-300 rounded py-1.5 px-3.5 w-full';
 const inputs = [
@@ -12,7 +14,6 @@ const inputs = [
   { name: 'phone', type: 'number', placeholder: 'Phone' },
 ];
 
-//
 function demoMood(msg) {
   alert(`${msg} is disabled in demo, use COD`);
 }
@@ -35,6 +36,7 @@ const PaymentOption = ({ img, text, active, fun }) => (
   </div>
 );
 const PlaceOrder = () => {
+  const { total, subtotal } = useSelector((state) => state.cart);
   return (
     <div>
       <form className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
@@ -116,7 +118,7 @@ const PlaceOrder = () => {
               <div className='flex flex-col gap-2 mt-2 text-sm'>
                 <div className='flex justify-between'>
                   <p>Subtotal</p>
-                  <p>$ 0.00</p>
+                  <p>$ {subtotal.toFixed(2)}</p>
                 </div>
                 <hr />
                 <div className='flex justify-between'>
@@ -126,7 +128,7 @@ const PlaceOrder = () => {
                 <hr />
                 <div className='flex justify-between'>
                   <b>Total</b>
-                  <b>$ 0.00</b>
+                  <b>$ {total.toFixed(2)}</b>
                 </div>
               </div>
             </div>
@@ -135,7 +137,7 @@ const PlaceOrder = () => {
             <div className='inline-flex gap-2 items-center mb-3'>
               <p className='text-gray-500'>
                 PAYMENT
-                <span className='text-gray-700 font-medium'>METHOD</span>
+                <span className='text-gray-700 font-medium'> METHOD</span>
               </p>
               <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700' />
             </div>

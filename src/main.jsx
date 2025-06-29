@@ -13,6 +13,7 @@ import ProductDetail from './components/pages/ProductDetail';
 import PlaceOrder from './components/pages/PlaceOrder';
 import Cart from './components/pages/Cart';
 import { Error404 } from './components';
+import CartItem from './components/CartItem.jsx';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/placeOrder/',
         element: <PlaceOrder />,
+      },
+      {
+        path: '/cartitem',
+        element: <CartItem />,
       },
     ],
   },

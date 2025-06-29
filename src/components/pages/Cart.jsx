@@ -1,6 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import CartItem from '../CartItem';
 
 const Cart = () => {
+  const { total, subtotal } = useSelector((state) => state.cart);
+
+  const cartItems = useSelector((state) => state.cart.items);
   return (
     <div className=' pt-14'>
       <div className=' text-2xl mb-3'>
@@ -11,6 +16,21 @@ const Cart = () => {
           <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700' />
         </div>
       </div>
+
+      <ul>
+        {cartItems.map((item) => (
+          <li key={item._id}>
+            <CartItem
+              img={item.image}
+              price={item.price}
+              quantity={item.quantity}
+              title={item.title}
+              size={item.size}
+              id={item.id}
+            />
+          </li>
+        ))}
+      </ul>
       <div />
       <div className='flex justify-end my-20'>
         <div className='w-full sm:w-[450px]'>
@@ -26,7 +46,7 @@ const Cart = () => {
             <div className='flex flex-col gap-2 mt-2 text-sm'>
               <div className='flex justify-between'>
                 <p>Subtotal</p>
-                <p>$ 0.00</p>
+                <p>$ {subtotal.toFixed(2)}</p>
               </div>
               <hr />
               <div className='flex justify-between'>
@@ -36,17 +56,17 @@ const Cart = () => {
               <hr />
               <div className='flex justify-between'>
                 <b>Total</b>
-                <b>$ 0.00</b>
+                <b>${total.toFixed(2)}</b>
               </div>
             </div>
           </div>
-          <NavLink to={'/placeOrder'}>
+          <Link to={'/placeOrder'}>
             <div className=' w-full text-end'>
               <button className='bg-black text-white text-sm my-8 px-8 py-3'>
                 PROCEED TO CHECKOUT
               </button>
             </div>
-          </NavLink>
+          </Link>
         </div>
       </div>
     </div>
