@@ -28,14 +28,14 @@ const ProductDetail = () => {
         id: product._id,
         price: product.price,
         image: product.image,
-        title: product.title,
+        title: product.name,
         size: selectedSize,
       })
     );
 
     alert('product is selected');
 
-    selectedSize(null);
+    setSelectedSize(null);
   }
 
   return (

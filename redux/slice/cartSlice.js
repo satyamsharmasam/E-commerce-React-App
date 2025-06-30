@@ -4,6 +4,7 @@ const initialState = {
   items: [],
   totalQuantity: 0,
   subtotal: 0,
+  shipping: 10,
   total: 10,
 };
 

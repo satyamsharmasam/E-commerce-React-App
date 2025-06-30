@@ -19,7 +19,7 @@ const Cart = () => {
 
       <ul>
         {cartItems.map((item) => (
-          <li key={item._id}>
+          <li key={item.id}>
             <CartItem
               img={item.image}
               price={item.price}
