@@ -59,9 +59,29 @@ export const cartSlice = createSlice({
       }
       updateTotals(state);
     },
+    updateQuantity: (state, action) => {
+      const { id, size, quantity } = action.payload;
+
+      const item = state.items.find((i) => i.id === id && i.size === size);
+
+      if (item && quantity >= 1) {
+        // total quantity adjust
+        state.totalQuantity += quantity - item.quantity;
+
+        // update item quantity
+        item.quantity = quantity;
+
+        // recalculate subtotal and total
+        state.subtotal = state.items.reduce(
+          (sum, i) => sum + (i.price || 0) * (i.quantity || 0),
+          0
+        );
+        state.total = state.subtotal + state.shipping;
+      }
+    },
   },
 });
 
-export const { addToCart, removeFromCart, decreaseQuantity } =
+export const { addToCart, removeFromCart, decreaseQuantity, updateQuantity } =
   cartSlice.actions;
 export default cartSlice.reducer;

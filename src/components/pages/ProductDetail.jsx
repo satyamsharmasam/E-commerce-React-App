@@ -19,7 +19,7 @@ const ProductDetail = () => {
 
   function handleAddToCart() {
     if (!selectedSize) {
-      alert('select the size first');
+      alert('Select size first ');
       return;
     }
 

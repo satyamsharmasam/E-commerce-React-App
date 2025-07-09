@@ -1,8 +1,18 @@
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { removeFromCart } from '../../redux/slice/cartSlice';
+import { removeFromCart, updateQuantity } from '../../redux/slice/cartSlice';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 const CartItem = ({ img, title, price, quantity, size, id }) => {
   const dispatch = useDispatch();
+  const [inputQty, setInputQty] = useState(quantity);
+
+  const handleQuantityChange = (e) => {
+    const newQty = parseInt(e.target.value);
+    if (newQty >= 1) {
+      setInputQty(newQty); // local update
+      dispatch(updateQuantity({ id, size, quantity: newQty })); // redux update
+    }
+  };
 
   return (
     <div className='border-b-1 border-t-1 border-gray-300 p-3 flex items-center xl:pr-20 justify-between gap-2 '>
@@ -22,7 +32,9 @@ const CartItem = ({ img, title, price, quantity, size, id }) => {
         <input
           type='number'
           className='h-10 p-2 w-12 xl:w-20 border-1 '
-          defaultValue={quantity}
+          defaultValue={inputQty}
+          onChange={handleQuantityChange}
+          contentEditable
         />
 
         <button
