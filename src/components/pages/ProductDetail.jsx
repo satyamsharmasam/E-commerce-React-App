@@ -3,6 +3,9 @@ import { useGetProductQuery } from '../../../redux/slice/apiSlice';
 import { addToCart } from '../../../redux/slice/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { hideAlert, triggerAlert } from '../../../redux/slice/alertSlice';
+import { IoWarningOutline } from 'react-icons/io5';
+import { FaRegCheckCircle } from 'react-icons/fa';
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -17,12 +20,20 @@ const ProductDetail = () => {
 
   if (!product) return <p>Product not found</p>;
 
-  function handleAddToCart() {
+  const handleAddToCart = () => {
     if (!selectedSize) {
-      alert('Select size first ');
+      dispatch(
+        triggerAlert({
+          message: 'Please select a size before adding to cart.',
+          type: 'warning',
+          icon: <IoWarningOutline className='text-xl' />,
+        })
+      );
+
       return;
     }
 
+    console.log('added to cart', selectedSize);
     dispatch(
       addToCart({
         id: product._id,
@@ -33,10 +44,16 @@ const ProductDetail = () => {
       })
     );
 
-    alert('product is selected');
+    dispatch(
+      triggerAlert({
+        message: 'Product added to cart',
+        type: 'success',
+        icon: <FaRegCheckCircle className='text-xl' />,
+      })
+    );
 
     setSelectedSize(null);
-  }
+  };
 
   return (
     <div className='flex my-10 gap-10 font-outfit xl:flex-nowrap flex-wrap items-center  '>
