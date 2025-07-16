@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Footer, Header, ScrollToTop } from './components';
+import Alert from './components/Alert';
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Header />
       <Outlet />
       <Footer />
+      <Alert />
     </div>
   );
 };
