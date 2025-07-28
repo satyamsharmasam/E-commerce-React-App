@@ -1,4 +1,6 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { triggerAlert } from '../../../redux/slice/alertSlice';
+import { MdErrorOutline } from 'react-icons/md';
 
 // input class and inputs aob
 const inputClass = 'border border-gray-300 rounded py-1.5 px-3.5 w-full';
@@ -7,36 +9,51 @@ const inputs = [
   { name: 'lastName', placeholder: 'Last name' },
   { name: 'email', type: 'email', placeholder: 'Email address' },
   { name: 'street', placeholder: 'Street' },
-  { name: 'city', placeholder: 'City' },
+  { name: 'City', placeholder: 'City' },
   { name: 'state', placeholder: 'State' },
   { name: 'zipcode', type: 'number', placeholder: 'Zipcode' },
   { name: 'country', placeholder: 'Country' },
   { name: 'phone', type: 'number', placeholder: 'Phone' },
 ];
 
-function demoMood(msg) {
-  alert(`${msg} is disabled in demo, use COD`);
-}
 // payment Option component
-const PaymentOption = ({ img, text, active, fun }) => (
-  <div
-    className='flex items-center gap-3 border p-2 px-3 cursor-pointer'
-    onClick={() => fun(text)}
-  >
-    <p
-      className={`min-w-3.5 h-3.5 border rounded-full ${
-        active ? 'bg-green-400' : ''
-      }`}
-    />
-    {img ? (
-      <img className='h-5 mx-4' src={img} alt='' />
-    ) : (
-      <p className='text-gray-500 text-sm font-medium mx-4'>{text}</p>
-    )}
-  </div>
-);
+
+const PaymentOption = ({ img, text, active }) => {
+  const dispatch = useDispatch();
+
+  function demoMood() {
+    if (text == 'Razorpay' || text == 'Stripe') {
+      dispatch(
+        triggerAlert({
+          message: `${text} is disabled in demo , use COD`,
+          type: 'error',
+          icon: <MdErrorOutline className='text-xl' />,
+        })
+      );
+    }
+  }
+
+  return (
+    <div
+      className='flex items-center gap-3 border p-2 px-3 cursor-pointer'
+      onClick={demoMood}
+    >
+      <p
+        className={`min-w-3.5 h-3.5 border rounded-full ${
+          active ? 'bg-green-400' : ''
+        }`}
+      />
+      {img ? (
+        <img className='h-5 mx-4' src={img} alt='' />
+      ) : (
+        <p className='text-gray-500 text-sm font-medium mx-4'>{text}</p>
+      )}
+    </div>
+  );
+};
 const PlaceOrder = () => {
   const { total, subtotal } = useSelector((state) => state.cart);
+
   return (
     <div>
       <form className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
@@ -144,12 +161,10 @@ const PlaceOrder = () => {
             <div className='flex gap-3 flex-col lg:flex-row'>
               <PaymentOption
                 img='https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/1200px-Stripe_Logo%2C_revised_2016.svg.png'
-                fun={demoMood}
                 text={'Stripe'}
               />
               <PaymentOption
                 img='https://foreverbuy.in/assets/razorpay_logo-DrY6yMWi.png'
-                fun={demoMood}
                 text={'Razorpay'}
               />
               <PaymentOption text=' CASH ON DELIVERY' active />

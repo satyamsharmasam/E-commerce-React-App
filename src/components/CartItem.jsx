@@ -22,7 +22,7 @@ const CartItem = ({ img, title, price, quantity, size, id }) => {
           <h2 className='font-semibold'>{title}</h2>
           <div className='flex items-center gap-4'>
             <p className='font-semibold'>${price}</p>
-            <button className='border-2 border-[#E5E7EB] py-1 px-[12px] bg-[#F3F4F6] '>
+            <button className='border-2 border-[#E5E7EB] py-1 px-[12px] bg-[#F3F4F6]'>
               {size}
             </button>
           </div>

@@ -3,7 +3,7 @@ import { useGetProductQuery } from '../../../redux/slice/apiSlice';
 import { addToCart } from '../../../redux/slice/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { hideAlert, triggerAlert } from '../../../redux/slice/alertSlice';
+import { triggerAlert } from '../../../redux/slice/alertSlice';
 import { IoWarningOutline } from 'react-icons/io5';
 import { FaRegCheckCircle } from 'react-icons/fa';
 

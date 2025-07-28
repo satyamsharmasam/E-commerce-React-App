@@ -16,7 +16,7 @@ const alertSlice = createSlice({
     hideAlert: (state) => {
       state.message = '';
       state.type = '';
-      state.icon = '';
+      state.icon = null;
     },
   },
 });
