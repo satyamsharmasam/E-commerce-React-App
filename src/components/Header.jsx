@@ -8,7 +8,12 @@ const Header = () => {
   return (
     <header className='flex items-center justify-between py-3 flex-wrap border-b-gray-200 border-b-2 sticky top-0 bg-white z-50 '>
       <NavLink to={'/'} className={'border-none'}>
-        <img className='w-30 cursor-pointer ' src={logo} alt='' />
+        <img
+          className='w-32 h-auto cursor-pointer '
+          src={logo}
+          alt=''
+          loading='lazy'
+        />
       </NavLink>
       <div className='flex items-center flex-row-reverse  sm:flex-row sm:gap-0 gap-1'>
         <Nav />

@@ -7,7 +7,7 @@ const Contact = () => {
         <span className='w-8 h-[1px] bg-black '></span>
       </h2>
       <div className='flex items-center gap-10 xl:pr-20 xl:flex-nowrap flex-wrap'>
-        <img className='w-150' src={contact} alt='' />
+        <img className='w-150' src={contact} alt='' loading='lazy' />
 
         <div className='flex flex-col gap-5 text-justify h-auto text-[#6B7280]'>
           <h3 className='text-xl font-bold text-[#4B5563]'>Our Store</h3>

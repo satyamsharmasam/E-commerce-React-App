@@ -58,6 +58,7 @@ const Carousel = () => {
                       className='flex-shrink-0 object-cover rounded-full w-11 h-11'
                       src='https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-1.png'
                       alt=''
+                      loading='lazy'
                     />
                     <div className='ml-4'>
                       <p className='text-base font-bold text-gray-900 font-pj'>
@@ -96,6 +97,7 @@ const Carousel = () => {
                       className='flex-shrink-0 object-cover rounded-full w-11 h-11'
                       src='https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-2.png'
                       alt=''
+                      loading='lazy'
                     />
                     <div className='ml-4'>
                       <p className='text-base font-bold text-gray-900 font-pj'>
@@ -134,6 +136,7 @@ const Carousel = () => {
                       className='w-11 h-11 rounded-full object-cover'
                       src='https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female.png'
                       alt='Isabella Rossi'
+                      loading='lazy'
                     />
                     <div className='ml-4'>
                       <p className='text-base font-bold text-gray-900 font-pj'>

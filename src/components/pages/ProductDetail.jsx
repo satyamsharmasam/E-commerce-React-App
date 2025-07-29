@@ -57,7 +57,12 @@ const ProductDetail = () => {
 
   return (
     <div className='flex my-10 gap-10 font-outfit xl:flex-nowrap flex-wrap items-center  '>
-      <img className='w-160' src={product.image[0]} alt={product.name} />
+      <img
+        className='w-160'
+        src={product.image[0]}
+        alt={product.name}
+        loading='lazy'
+      />
       <div>
         <div className='border-b-1 border-gray-300  flex flex-col gap-5 pb-5 mb-5'>
           <h1 className='font-semibold text-2xl'>{product.name}</h1>

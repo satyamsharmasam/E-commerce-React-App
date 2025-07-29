@@ -44,7 +44,7 @@ const PaymentOption = ({ img, text, active }) => {
         }`}
       />
       {img ? (
-        <img className='h-5 mx-4' src={img} alt='' />
+        <img className='h-5 mx-4' src={img} alt='' loading='lazy' />
       ) : (
         <p className='text-gray-500 text-sm font-medium mx-4'>{text}</p>
       )}

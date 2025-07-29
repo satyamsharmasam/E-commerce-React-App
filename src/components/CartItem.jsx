@@ -17,7 +17,7 @@ const CartItem = ({ img, title, price, quantity, size, id }) => {
   return (
     <div className='border-b-1 border-t-1 border-gray-300 p-3 flex items-center xl:pr-20 justify-between gap-2 '>
       <div className='flex gap-5 items-center'>
-        <img className='w-20' src={img} alt='' />
+        <img className='w-20' src={img} alt='' loading='lazy' />
         <div className='flex flex-col gap-5'>
           <h2 className='font-semibold'>{title}</h2>
           <div className='flex items-center gap-4'>

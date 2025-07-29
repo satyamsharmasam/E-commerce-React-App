@@ -1,19 +1,19 @@
 import './index.css';
 import App from './App.jsx';
 import { createRoot } from 'react-dom/client';
-import { StrictMode } from 'react';
+import { lazy, StrictMode } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from '../redux/Store';
-import Home from './components/pages/Home';
-import Collection from './components/pages/Collection';
-import About from './components/pages/About';
-import Contact from './components/pages/Contact';
-import ProductDetail from './components/pages/ProductDetail';
-import PlaceOrder from './components/pages/PlaceOrder';
-import Cart from './components/pages/Cart';
-import { Error404 } from './components';
-import CartItem from './components/CartItem.jsx';
+const Home = lazy(() => import('./components/pages/Home'));
+const Collection = lazy(() => import('./components/pages/Collection'));
+const About = lazy(() => import('./components/pages/About'));
+const Contact = lazy(() => import('./components/pages/Contact'));
+const ProductDetail = lazy(() => import('./components/pages/ProductDetail'));
+const PlaceOrder = lazy(() => import('./components/pages/PlaceOrder'));
+const Cart = lazy(() => import('./components/pages/Cart'));
+const Error404 = lazy(() => import('./components/Error404'));
+const CartItem = lazy(() => import('./components/CartItem'));
 
 const router = createBrowserRouter([
   {

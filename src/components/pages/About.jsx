@@ -1,5 +1,7 @@
+import { lazy } from 'react';
 import AboutImage from '../../assets/AboutImage.png';
-import Carousel from '../Carousel';
+const Carousel = lazy(() => import('../Carousel'));
+
 const About = () => {
   return (
     <div className='pt-10 '>
@@ -8,7 +10,7 @@ const About = () => {
         <span className='w-8 h-[1px] bg-black '></span>
       </h2>
       <div className='flex items-center gap-15 xl:pr-20 xl:flex-nowrap flex-wrap justify-center'>
-        <img className='w-115' src={AboutImage} alt='' />
+        <img className='w-115' src={AboutImage} alt='' loading='lazy' />
         <div className='flex flex-col gap-5 text-justify h-auto'>
           <p>
             Velvex was born from a bold vision — to redefine modern fashion with
