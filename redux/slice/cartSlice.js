@@ -22,12 +22,18 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart(state, action) {
       const item = action.payload;
-      const existingItem = state.items.find((i) => i.id === item.id);
+
+      // Match by id AND size
+      const existingItem = state.items.find(
+        (i) => i.id === item.id && i.size === item.size
+      );
+
       if (existingItem) {
         existingItem.quantity++;
       } else {
         state.items.push({ ...item, quantity: 1 });
       }
+
       state.totalQuantity++;
       updateTotals(state);
     },
