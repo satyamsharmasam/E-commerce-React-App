@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import CartItem from '../CartItem';
+import { lazy } from 'react';
+const CartItem = lazy(() => import('../CartItem'));
 
 const Cart = () => {
   const { total, subtotal } = useSelector((state) => state.cart);
