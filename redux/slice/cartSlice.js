@@ -20,6 +20,7 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    // add to cart reducer for adding product
     addToCart(state, action) {
       const item = action.payload;
 
@@ -37,6 +38,7 @@ export const cartSlice = createSlice({
       state.totalQuantity++;
       updateTotals(state);
     },
+    // remove reducer for remove product 
     removeFromCart: (state, action) => {
       const { id, size } = action.payload;
       const existing = state.items.find((i) => i.id === id && i.size === size);
@@ -53,6 +55,7 @@ export const cartSlice = createSlice({
         state.total = state.subtotal + state.shipping;
       }
     },
+    // decrease quantity reducer for decrease product quantity
     decreaseQuantity: (state, action) => {
       const id = action.payload;
       const item = state.items.find((i) => i.id === id);
@@ -65,6 +68,7 @@ export const cartSlice = createSlice({
       }
       updateTotals(state);
     },
+    // Update quantity reducer
     updateQuantity: (state, action) => {
       const { id, size, quantity } = action.payload;
 
