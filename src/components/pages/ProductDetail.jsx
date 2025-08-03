@@ -4,8 +4,6 @@ import { addToCart } from '../../../redux/slice/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { triggerAlert } from '../../../redux/slice/alertSlice';
-import { IoWarningOutline } from 'react-icons/io5';
-import { FaRegCheckCircle } from 'react-icons/fa';
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -26,14 +24,12 @@ const ProductDetail = () => {
         triggerAlert({
           message: 'Please select a size before adding to cart.',
           type: 'warning',
-          icon: <IoWarningOutline className='text-xl' />,
+          icon: 'warning',
         })
       );
 
       return;
     }
-
-    console.log('added to cart', selectedSize);
     dispatch(
       addToCart({
         id: product._id,
@@ -48,7 +44,7 @@ const ProductDetail = () => {
       triggerAlert({
         message: 'Product added to cart',
         type: 'success',
-        icon: <FaRegCheckCircle className='text-xl' />,
+        icon: 'success',
       })
     );
 

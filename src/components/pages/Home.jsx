@@ -1,10 +1,18 @@
 import { useGetProductQuery } from '../../../redux/slice/apiSlice';
 import Card from '../Card';
+import Skeleton from '../Skeleton';
 
 const Home = () => {
   const { data, isLoading, error } = useGetProductQuery();
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <div className='p-2 border rounded shadow flex flex-row gap-2 items-center flex-wrap'>
+        <Skeleton className='h-4 w-3/4 mb-2' />
+        <Skeleton className='h-4 w-1/2' />
+        <Skeleton className='h-120 w-full' />
+      </div>
+    );
   if (error) return <p>Error: {error.message}</p>;
 
   // slice 5 product for latest collection

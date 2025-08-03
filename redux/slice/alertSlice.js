@@ -5,7 +5,7 @@ const alertSlice = createSlice({
   initialState: {
     message: '',
     type: '',
-    icon: null,
+    icon: '',
   },
   reducers: {
     showAlert: (state, action) => {

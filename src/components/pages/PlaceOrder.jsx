@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { triggerAlert } from '../../../redux/slice/alertSlice';
-import { MdErrorOutline } from 'react-icons/md';
+import { useRef } from 'react';
+import { clearCart } from '../../../redux/slice/cartSlice';
 
 // input class and inputs aob
 const inputClass = 'border border-gray-300 rounded py-1.5 px-3.5 w-full';
@@ -27,7 +28,7 @@ const PaymentOption = ({ img, text, active }) => {
         triggerAlert({
           message: `${text} is disabled in demo , use COD`,
           type: 'error',
-          icon: <MdErrorOutline className='text-xl' />,
+          icon: 'error',
         })
       );
     }
@@ -54,9 +55,29 @@ const PaymentOption = ({ img, text, active }) => {
 const PlaceOrder = () => {
   const { total, subtotal } = useSelector((state) => state.cart);
 
+  const formRef = useRef(null);
+  const dispatch = useDispatch();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    formRef.current.reset();
+    dispatch(
+      triggerAlert({
+        message: `Order placed`,
+        type: 'success',
+        icon: 'success',
+      })
+    );
+    dispatch(clearCart());
+  }
+
   return (
     <div>
-      <form className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
+      <form
+        className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'
+        onSubmit={handleSubmit}
+        ref={formRef}
+      >
         <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
           <div className='text-xl sm:text-2xl my-3'>
             <div className='inline-flex gap-2 items-center mb-3'>

@@ -1,6 +1,9 @@
 import { IoClose } from 'react-icons/io5';
 import { useSelector, useDispatch } from 'react-redux';
 import { hideAlert } from '../../redux/slice/alertSlice';
+import { IoWarningOutline } from 'react-icons/io5';
+import { FaRegCheckCircle } from 'react-icons/fa';
+import { MdErrorOutline } from 'react-icons/md';
 
 const Alert = () => {
   const { message, type, icon } = useSelector((state) => state.alert);
@@ -13,6 +16,14 @@ const Alert = () => {
     info: 'alert-info',
     warning: 'alert-warning',
   };
+
+  // alert icons types
+  const iconMap = {
+    warning: <IoWarningOutline className='text-xl' />,
+    success: <FaRegCheckCircle className='text-xl' />,
+    error: <MdErrorOutline className='text-xl' />,
+  };
+
   return (
     <div
       role='alert'
@@ -20,7 +31,7 @@ const Alert = () => {
         alertTypeClass[type] || 'alert-info'
       }`}
     >
-      <div>{icon}</div>
+      <div>{iconMap[icon]}</div>
       <span>{message}</span>
       <IoClose
         className='text-xl cursor-pointer'
