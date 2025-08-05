@@ -7,8 +7,8 @@ const Home = () => {
 
   if (isLoading)
     return (
-      <div className='p-2 border rounded shadow flex flex-row gap-2 items-center lg:flex-nowrap flex-wrap'>
-        <Skeleton className='h-4 w-3/4 mb-2' />
+      <div className='p-1 border rounded shadow flex flex-row gap-2 items-center lg:flex-nowrap flex-wrap'>
+        <Skeleton className='h-4 w-1/2' />
         <Skeleton className='h-4 w-1/2' />
         <Skeleton className='h-120 w-full' />
       </div>
