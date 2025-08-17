@@ -22,8 +22,6 @@ A modern and responsive **E-commerce web application** built with React, Tailwin
 
 ## 🌍 Live Demo
 
-[🔗 View Live Project](https://your-deployment-link.netlify.app/)
+[🔗 View Live Project](https://velvex.netlify.app/)
 
----
 
-क्या चाहो मैं तुम्हें ek **professional GitHub README style** बना दूँ (badges, sections, emojis, screenshots placeholder ke sath) ताकि वो और attractive लगे?
