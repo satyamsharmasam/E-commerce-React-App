@@ -22,6 +22,6 @@ A modern and responsive **E-commerce web application** built with React, Tailwin
 
 ## 🌍 Live Demo
 
-[🔗](https://velvex.netlify.app/)
+[🔗 View Live Project](https://velvex.netlify.app/)
 
 
