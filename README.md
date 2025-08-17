@@ -1,4 +1,4 @@
-# 🛍️ E-Commerce App
+# 🛍️ Velvex
 
 A modern and responsive **E-commerce web application** built with React, TailwindCSS, and Redux Toolkit. The app provides users with a smooth online shopping experience with filtering, cart management, and persistent storage.
 
@@ -17,28 +17,8 @@ A modern and responsive **E-commerce web application** built with React, Tailwin
 
 * **Frontend:** React, Vite, TailwindCSS
 * **State Management:** Redux Toolkit, RTK Query
-* **API:** FakeStore API / Custom API
-* **Deployment:** Vercel / Netlify
-
-## 📸 Screenshots
-
-(Add some app screenshots here for better presentation)
-
-## ⚡ Getting Started
-
-Clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/your-username/ecommerce-app.git
-cd ecommerce-app
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
+* **API:** FakeStore API 
+* **Deployment:**  Netlify
 
 ## 🌍 Live Demo
 
