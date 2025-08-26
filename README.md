@@ -1,12 +1,27 @@
-# React + Vite
+# 🛍️ Velvex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **E-commerce web application** built with React, TailwindCSS, and Redux Toolkit. The app provides users with a smooth online shopping experience with filtering, cart management, and persistent storage.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Browse Products** – View products with images, descriptions, and prices
+* **Filter & Sort** – Filter by category, price (low to high / high to low), and size
+* **Add to Cart** – Add products to the cart with real-time updates
+* **Persistent Cart** – Cart items are saved in **localStorage**, even after closing the browser
+* **Search Functionality** – Quickly find products by name or category
+* **Responsive Design** – Mobile-friendly UI using TailwindCSS
+* **Lazy Loading** – Faster performance with optimized loading
+* **State Management** – Centralized state using Redux Toolkit + RTK Query for API calls
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** React, Vite, TailwindCSS
+* **State Management:** Redux Toolkit, RTK Query
+* **API:** FakeStore API 
+* **Deployment:**  Netlify
+
+## 🌍 Live Demo
+
+[🔗 View Live Project](https://velvex.netlify.app/)
+
+
